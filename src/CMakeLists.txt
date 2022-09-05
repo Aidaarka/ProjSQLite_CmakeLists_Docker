@@ -20,9 +20,9 @@ add_definitions(-DHAVE_READLINE)
 add_library(sqlite SHARED sqlite3.c sqlite3.h sqlite3ext.h)
 add_executable(sqlite3 shell.c sqlite3.c sqlite3.h sqlite3ext.h)
 
-
 find_package(readline)
 target_link_libraries(sqlite3 readline)
+
 
 if(UNIX)
   include(FindThreads)

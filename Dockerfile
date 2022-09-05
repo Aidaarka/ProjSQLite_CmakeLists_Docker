@@ -31,10 +31,9 @@ RUN apt-get update \
    libreadline8 \
    build-essential \
    cmake
-   
 
 # Скопируем приложение со сборочного контейнера в рабочую директорию
-COPY --from=build /app/src/sqlite .
+COPY --from=build /app/src/sqlite3 .
 
 # Установим точку входа
-ENTRYPOINT ["./sqlite"]
+ENTRYPOINT ["./sqlite3"]
